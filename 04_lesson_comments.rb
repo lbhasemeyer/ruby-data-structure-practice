@@ -19,3 +19,15 @@ require_relative 'curriculum'
 #     Read - 1
 #     Update - 6
 #     Delete - 2
+
+
+CURRICULUM[:units].each do |unit|
+  puts "#{unit[:name]}"
+  unit[:lessons].each do |lesson|
+    comments = 0
+    lesson[:occurrences].each do |date, info|
+      comments = comments + info[:comments].count
+    end
+    puts "  #{lesson[:name]} - #{comments}"
+  end
+end

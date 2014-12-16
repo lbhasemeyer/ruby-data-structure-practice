@@ -27,3 +27,15 @@ require_relative 'curriculum'
 #   Jules Herzog
 #   Julia Hilll
 #   etc...
+
+
+
+CURRICULUM[:units].each do |unit|
+  unit[:lessons].each do |lesson|
+    lesson[:occurrences].each do |date, info|
+      info[:comments].each do |comment|
+        puts comment[:user][:name]
+      end
+    end
+  end
+end

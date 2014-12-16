@@ -27,3 +27,13 @@ require_relative 'curriculum'
 #       g5 on 2013-06-08
 #       g6 on 2013-07-08
 #       etc...
+
+CURRICULUM[:units].each do |unit|
+  puts "#{unit[:name]}"
+  unit[:lessons].each do |lesson|
+    puts "    #{lesson[:name]}"
+    lesson[:occurrences].each do |key, value|
+      puts "        #{value[:cohort][:name]} on #{key}"
+    end
+  end
+end
